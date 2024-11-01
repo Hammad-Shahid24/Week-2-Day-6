@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Form (HTML, CSS, TS)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Are you starting a new project?<br>
+            Let's collaborate!
+        </h1>
+        <h3>Please fill out this short form to get <br> started, I'll get back to you shortly.</h3>
+
+    </header>
+    <main>
+        <div class="main-content">
+            <div id="main-form-div" class="common-step-form-section-styles">
+                <div class="animation-div personal-info-step">
+                    <h2 class="form-heading">Please fill in your details</h2>
+                    <hr class="heading-hr">
+                    <input class="input text-input-fields" type="text" id="name" name="name"
+                        placeholder="Enter your name" required pattern="[A-Za-z\s]+" maxlength="50" minlength="2">
+                    <p class="name-error error"></p>
+                    <br>
+                    <input class="input text-input-fields" type="email" id="email" name="email"
+                        placeholder="Enter your email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        maxlength="50" minlength="5">
+                    <p class="email-error error"></p>
+                    <p class="step-indicator">1/8</p>
+                </div>
+
+                <div class="animation-div company-info-step">
+                    <h2 class="form-heading">Company Information</h2>
+                    <hr class="heading-hr">
+                    <textarea class="input company-input-field" id="company" name="company"
+                        placeholder="Tell me a bit about your start-up, company or organization." maxlength="500"
+                        required></textarea>
+                    <p class="company-error error"></p>
+                    <p class="step-indicator">2/8</p>
+                </div>
+
+                <div class="animation-div business-info-step">
+                    <h2 class="form-heading">Business Information</h2>
+                    <hr class="heading-hr">
+
+                    <!-- Net Revenue and Net Profit Section -->
+                    <span class="align-lable-and-input">
+                        <input type="text" class="input small" id="net-revenue-2023" name="net-revenue-2023"
+                            placeholder="$ Revenue (in millions)" required>
+                        <span class="year-span-element">2023</span>
+                        <input type="text" class="input small" id="net-profit-2023" name="net-profit-2023"
+                            placeholder="$ Net profit (in millions)" required>
+                    </span>
+                    <span class="align-lable-and-input">
+                        <input type="text" class="input small" id="net-revenue-2022" name="net-revenue-2022"
+                            placeholder="$ Revenue (in millions)" required>
+                        <span class="year-span-element">2022</span>
+                        <input type="text" class="input small" id="net-profit-2022" name="net-profit-2022"
+                            placeholder="$ Net profit (in millions)" required>
+                    </span>
+                    <span class="align-lable-and-input">
+                        <input type="text" class="input small" id="net-revenue-2021" name="net-revenue-2021"
+                            placeholder="$ Revenue (in millions)" required>
+                        <span class="year-span-element">2021</span>
+                        <input type="text" class="input small" id="net-profit-2021" name="net-profit-2021"
+                            placeholder="$ Net profit (in millions)" required>
+                    </span>
+
+                    <p class="business-error error"></p>
+                    <p class="step-indicator">3/8</p>
+                </div>
+
+                <div class="animation-div birthdate-step">
+                    <h2 class="form-heading">Personal Information</h2>
+                    <hr class="heading-hr">
+                    <select class="select-input input" id="gender" name="gender" class="input text-input-fields"
+                        required>
+                        <option value="" disabled selected>Gender & Birthdate</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <p class="gender-error error"></p>
+                    <input class="input" type="date" id="birthdate" name="birthdate" required>
+                    <p class="birthdate-error error"></p>
+                    <p class="step-indicator">4/8</p>
+                </div>
+
+                <div class="animation-div question-step">
+                    <h2 class="form-heading">Enter Your Questions</h2>
+                    <hr class="heading-hr">
+
+                    <!-- Question Input and Add Button -->
+                    <span class="add-question-container">
+
+                        <input class="input question-input-field" type="text" id="question-input" name="question-input"
+                            placeholder="Enter your question" required>
+                        <button class="add-question-button">+</button>
+                    </span>
+
+                    <!-- Make sure this div exists -->
+                    <div class="question-list">
+
+                    </div> <!-- Container for question badges -->
+
+                    <p class="question-error error"></p>
+
+
+                    <p class="step-indicator">6/8</p>
+                </div>
+
+                <div class="animation-div preferences-step">
+                    <h2 class="form-heading">Preferences</h2>
+                    <hr class="heading-hr">
+
+                    <select class="select-input input" id="contact-method" name="contact-method" required>
+                        <option disabled selected value="">Preferred contact method</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                    </select>
+                    <br>
+                    <input class="phone-input-field input" type="tel" name="phone" id="phone"
+                        placeholder="Enter phone number">
+                    <p class="phone-error error"></p>
+                    <br>
+
+                    <span class="align-newsletter">
+
+                        <p class="newsletter-label" for="newsletter">Subscribe to newsletter</p>
+                        <input class="newsletter-input-checkbox" type="checkbox" id="newsletter" name="newsletter">
+                    </span>
+
+                    <p class="step-indicator">7/8</p>
+                </div>
+
+                <div class="animation-div summary-step">
+                    <h2 class="form-heading">Summary</h2>
+                    <hr class="heading-hr">
+                    <p>Please review your information before submitting.</p>
+                    <br>
+
+                    <!-- Personal Information Summary -->
+                    <h3>Personal Information</h3>
+                    <div class="summary-details-container">
+                        <p><strong>Name: </strong><span id="summary-name"></span></p>
+                        <p><strong>Email: </strong> <span id="summary-email"></span></p>
+                        <p><strong>Gender: </strong><span id="summary-gender"></span></p>
+                        <p><strong>Birthdate: </strong><span id="summary-birthdate"></span></p>
+                    </div>
+                    <br>
+
+                    <!-- Business Information Summary -->
+                    <h3>Business Information</h3>
+                    <div class="summary-details-container">
+                        <p><strong>Company Info: </strong><span id="summary-company"></span></p>
+                        <p><strong>Net Revenue 2023: </strong><span id="summary-net-revenue-2023"></span></p>
+                        <p><strong>Net Revenue 2022: </strong><span id="summary-net-revenue-2022"></span></p>
+                        <p><strong>Net Revenue 2021: </strong><span id="summary-net-revenue-2021"></span></p>
+                        <p><strong>Net Profit 2023: </strong><span id="summary-net-profit-2023"></span></p>
+                        <p><strong>Net Profit 2022: </strong><span id="summary-net-profit-2022"></span></p>
+                        <p><strong>Net Profit 2021: </strong><span id="summary-net-profit-2021"></span></p>
+                    </div>
+                    <br>
+
+                    <!-- Questions Summary -->
+                    <h3>Questions</h3>
+                    <div class="summary-details-container" id="summary-questions"></div>
+                    <br>
+
+                    <!-- Preferences Summary -->
+                    <h3>Preferences</h3>
+                    <div class="summary-details-container">
+                        <p><strong>Contact Method: </strong><span id="summary-contact-method"></span></p>
+                        <p><strong>Phone: </strong><span id="summary-phone"></span></p>
+                        <p><strong>Subscribed to Newsletter: </strong><span id="summary-newsletter"></span></p>
+                    </div>
+
+                    <p class="step-indicator">8/8</p>
+                </div>
+            </div>
+
+            <div id="submissions-list-div" class="">
+                <table id="submissions-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="submissions-table-body">
+                        <!-- Submissions will be dynamically inserted here -->
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+            <div id="main-form-controls-div" class="next-back-button-div">
+                <button class="back-button" id="back-button">&rarr; Back</button>
+                <button class="next-button" id="next-button">Next</button>
+                <button class="clear-button" id="clear-button">Clear</button>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="submission-list-button next-button">Show all Submissions</div>
+        <div>@hammadatbracekts</div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
