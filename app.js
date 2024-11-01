@@ -796,7 +796,8 @@ function deleteSubmission(index) {
   localStorage.setItem("submissions", JSON.stringify(submissions));
 
   alert("Submission deleted successfully!");
-  // Refresh the table
+  switchView();
+  window.location.reload();
   showSubmissions();
 }
 
