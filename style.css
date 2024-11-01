@@ -392,6 +392,10 @@ main {
   padding: 1.25rem;
 }
 
+.summary-company {
+  text-align: justify;
+}
+
 .summary-details-container ol {
   padding-left: 1rem;
   list-style-position: outside;
